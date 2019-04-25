@@ -12,6 +12,9 @@ function startServer() {
                     if (data.type === 1) {
                         let userName = data.userName;
                         let content = data.content;
+                        fs.appendFile('./log', `UserName: ${userName}; Content:${content}; Time: ${Date.now().toLocaleString()};\n`, (err) => {
+
+                        })
                         console.log(`message received: ${message}`)
                         Object.keys(loggedUser).forEach((name) => {
                             if (name !== userName) {
